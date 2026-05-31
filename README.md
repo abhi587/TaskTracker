@@ -195,3 +195,8 @@ Layering rule: routes attach middleware and map to handlers, controllers parse t
 - Dev secrets (JWT, Redis Cloud credentials, MongoDB Atlas URI) are committed in `.env` so the reviewer gets a zero-config run. Real deployments would inject these via the environment.
 - Projects are a thin module (create + list); the focus of the assignment is the task domain.
 - Single-field indexes on `Task` per the assignment spec; in a real production system these would likely be compound indexes leading with `organizationId`.
+
+
+
+Pasting here the Postman Collection:-
+

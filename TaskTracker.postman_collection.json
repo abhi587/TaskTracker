@@ -1,0 +1,485 @@
+{
+	"info": {
+		"_postman_id": "04ef9fce-19dc-4875-af8a-8be91b8de1e4",
+		"name": "TaskTracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29799535"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"admin@acme12.test\",\n    \"password\": \"password1232\",\n    \"name\": \"Alice Admin\",\n    \"organizationName\": \"Acme Inc\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"member@acme.test\",\n    \"password\": \"password123\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refreshToken",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"refreshToken\": \"fc57ff3b685c2270d98f2ad8944442cc641b55dd99e0b66bbd42e53626f324a0c252a4d2a8b7884f870ae1eb7f4c6400\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/refresh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateManagerUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YTFjNGY3ZThkNWE3M2VmNmI3NzBlZDQiLCJvcmdhbml6YXRpb25JZCI6IjZhMWM0ZjdlOGQ1YTczZWY2Yjc3MGVkMyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDI0MTYzNywiZXhwIjoxNzgwMjQyNTM3fQ.jYSehMKwzC5U98jSrfSri7aRcsOIk_Rf_hrPz5ftXjM"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"manager@acme.test\",\n    \"password\": \"password123\",\n    \"name\": \"Mara Manager\",\n    \"role\": \"MANAGER\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createMemberUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YTFjNGY3ZThkNWE3M2VmNmI3NzBlZDQiLCJvcmdhbml6YXRpb25JZCI6IjZhMWM0ZjdlOGQ1YTczZWY2Yjc3MGVkMyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDI0MTYzNywiZXhwIjoxNzgwMjQyNTM3fQ.jYSehMKwzC5U98jSrfSri7aRcsOIk_Rf_hrPz5ftXjM"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"member@acme.test\",\n    \"password\": \"password123\",\n    \"name\": \"Max Member\",\n    \"role\": \"MEMBER\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listUSerInORG",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YTFjNGY3ZThkNWE3M2VmNmI3NzBlZDQiLCJvcmdhbml6YXRpb25JZCI6IjZhMWM0ZjdlOGQ1YTczZWY2Yjc3MGVkMyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDI0MTYzNywiZXhwIjoxNzgwMjQyNTM3fQ.jYSehMKwzC5U98jSrfSri7aRcsOIk_Rf_hrPz5ftXjM"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createProject",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YTFjNGY3ZThkNWE3M2VmNmI3NzBlZDQiLCJvcmdhbml6YXRpb25JZCI6IjZhMWM0ZjdlOGQ1YTczZWY2Yjc3MGVkMyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDI0NzMwMiwiZXhwIjoxNzgwMjQ4MjAyfQ.reLslXvtWGOngOXCTpHSgoczSG_6k9rfUwdY-YBR3NY"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Website Revamp\",\n    \"description\": \"Q3 marketing site\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/projects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listProject",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YTFjNGY3ZThkNWE3M2VmNmI3NzBlZDQiLCJvcmdhbml6YXRpb25JZCI6IjZhMWM0ZjdlOGQ1YTczZWY2Yjc3MGVkMyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDI0NzMwMiwiZXhwIjoxNzgwMjQ4MjAyfQ.reLslXvtWGOngOXCTpHSgoczSG_6k9rfUwdY-YBR3NY"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/projects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createTask",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YTFjNTUzN2FhMzRlZmQ1ODkzMTQ3ZjEiLCJvcmdhbml6YXRpb25JZCI6IjZhMWM0ZjdlOGQ1YTczZWY2Yjc3MGVkMyIsInJvbGUiOiJNRU1CRVIiLCJpYXQiOjE3ODAyNTM2MTEsImV4cCI6MTc4MDI1NDUxMX0.hYMFaDFaofQbqsWDqO-wjsAdO_IZdbCWHJUppeuk9K8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"WakeUpInMorningEarly\",\n    \"description\": \"Arounf5Am\",\n    \"priority\": \"MEDIUM\",\n    \"projectId\": \"6a1c6b1d040c898bfca14632\",\n    \"assigneeId\": \"6a1c5537aa34efd5893147f1\",\n    \"dueDate\": \"2026-12-31T23:59:59.000Z\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTaskById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YTFjNGY3ZThkNWE3M2VmNmI3NzBlZDQiLCJvcmdhbml6YXRpb25JZCI6IjZhMWM0ZjdlOGQ1YTczZWY2Yjc3MGVkMyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDI1MzEwMywiZXhwIjoxNzgwMjU0MDAzfQ.7N--FFADGyHFvTJPSvvDrLdzy6xWFeoh1Jt1Vcbq-J8"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/tasks/6a1c7e0bbef457d126b35310",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks",
+						"6a1c7e0bbef457d126b35310"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllListTask",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YTFjNTUzN2FhMzRlZmQ1ODkzMTQ3ZjEiLCJvcmdhbml6YXRpb25JZCI6IjZhMWM0ZjdlOGQ1YTczZWY2Yjc3MGVkMyIsInJvbGUiOiJNRU1CRVIiLCJpYXQiOjE3ODAyNTM2MTEsImV4cCI6MTc4MDI1NDUxMX0.hYMFaDFaofQbqsWDqO-wjsAdO_IZdbCWHJUppeuk9K8"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "taskKistWithFilter",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YTFjNGY3ZThkNWE3M2VmNmI3NzBlZDQiLCJvcmdhbml6YXRpb25JZCI6IjZhMWM0ZjdlOGQ1YTczZWY2Yjc3MGVkMyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDI1MjE1MiwiZXhwIjoxNzgwMjUzMDUyfQ.hybeUSB8vEa_XKbQ504pYKNzfxbXJavoLzQvm6j28j4"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/tasks?status=TODO&priority=MEDIUM&page=1&limit=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "TODO"
+						},
+						{
+							"key": "priority",
+							"value": "MEDIUM"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateTaskStatus",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YTFjNGY3ZThkNWE3M2VmNmI3NzBlZDQiLCJvcmdhbml6YXRpb25JZCI6IjZhMWM0ZjdlOGQ1YTczZWY2Yjc3MGVkMyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDI1MzEwMywiZXhwIjoxNzgwMjU0MDAzfQ.7N--FFADGyHFvTJPSvvDrLdzy6xWFeoh1Jt1Vcbq-J8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"status\": \"TODO\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/tasks/6a1c7e0bbef457d126b35310/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks",
+						"6a1c7e0bbef457d126b35310",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteTask",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YTFjNGY3ZThkNWE3M2VmNmI3NzBlZDQiLCJvcmdhbml6YXRpb25JZCI6IjZhMWM0ZjdlOGQ1YTczZWY2Yjc3MGVkMyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MDI1MzEwMywiZXhwIjoxNzgwMjU0MDAzfQ.7N--FFADGyHFvTJPSvvDrLdzy6xWFeoh1Jt1Vcbq-J8"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/tasks/6a1c7e0bbef457d126b35310",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks",
+						"6a1c7e0bbef457d126b35310"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
