@@ -4,10 +4,14 @@ const taskSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      required: true,
+      required: [true, "Title is required"],
+      trim: true,
     },
 
-    description: String,
+    description: {
+      type: String,
+      default: "",
+    },
 
     priority: {
       type: String,
@@ -32,7 +36,20 @@ const taskSchema = new mongoose.Schema(
       ref: "User",
     },
 
-    dueDate: Date,
+    project: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Project",
+    },
+
+    dueDate: {
+      type: Date,
+    },
+
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
   },
   {
     timestamps: true,
@@ -43,4 +60,7 @@ taskSchema.index({ status: 1 });
 taskSchema.index({ assignee: 1 });
 taskSchema.index({ dueDate: 1 });
 
-module.exports = mongoose.model("Task", taskSchema);
+module.exports = mongoose.model(
+  "Task",
+  taskSchema
+);
