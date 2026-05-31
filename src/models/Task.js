@@ -21,13 +21,7 @@ const taskSchema = new mongoose.Schema(
 
     status: {
       type: String,
-      enum: [
-        "TODO",
-        "IN_PROGRESS",
-        "IN_REVIEW",
-        "DONE",
-        "BLOCKED",
-      ],
+      enum: ["TODO", "IN_PROGRESS", "IN_REVIEW", "DONE", "BLOCKED"],
       default: "TODO",
     },
 
@@ -41,6 +35,12 @@ const taskSchema = new mongoose.Schema(
       ref: "Project",
     },
 
+    organizationId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Organization",
+      required: true,
+    },
+
     dueDate: {
       type: Date,
     },
@@ -51,16 +51,11 @@ const taskSchema = new mongoose.Schema(
       required: true,
     },
   },
-  {
-    timestamps: true,
-  }
+  { timestamps: true }
 );
 
 taskSchema.index({ status: 1 });
 taskSchema.index({ assignee: 1 });
 taskSchema.index({ dueDate: 1 });
 
-module.exports = mongoose.model(
-  "Task",
-  taskSchema
-);
+module.exports = mongoose.model("Task", taskSchema);
